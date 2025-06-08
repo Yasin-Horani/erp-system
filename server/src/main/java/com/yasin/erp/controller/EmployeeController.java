@@ -1,9 +1,6 @@
 package com.yasin.erp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/employees")
@@ -18,5 +15,10 @@ public class EmployeeController {
     @GetMapping(path = "/employee-by-id")
     public String getEmployeeById(@RequestParam(name = "id") int id){
         return "<h1 style='color: green;'>Yasin</h1>"+ id;
+    }
+
+    @GetMapping(path = "/employee/{username}/username")
+    public String getEmployeeUsername(@PathVariable(name = "username") String username){
+        return "<h1 style='color: blue;'>"+username+"</h1>";
     }
 }
