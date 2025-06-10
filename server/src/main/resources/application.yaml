@@ -1,6 +1,8 @@
 #https://www.javainuse.com/app2yaml
 server:
   port: 8081
+  servlet:
+    context-path: /hr
 spring:
   application:
     name: erp
