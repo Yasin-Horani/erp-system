@@ -1,5 +1,6 @@
 package com.yasin.erp.controller;
 
+import com.yasin.erp.model.dto.EmployeeReqDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,5 +21,10 @@ public class EmployeeController {
     @GetMapping(path = "/employee/{username}/username")
     public String getEmployeeUsername(@PathVariable(name = "username") String username){
         return "<h1 style='color: blue;'>"+username+"</h1>";
+    }
+
+    @PostMapping(path = "/save-employee")
+    public void save(@RequestBody EmployeeReqDTO employeeReqDTO){
+        System.out.println(employeeReqDTO);
     }
 }
