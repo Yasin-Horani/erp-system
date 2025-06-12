@@ -7,5 +7,4 @@ public class EmployeeReqDTO {
     private String username;
     private String password;
     private String email;
-
 }
