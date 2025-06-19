@@ -26,8 +26,8 @@ public class EmployeeController {
     @PostMapping(path = "/save-employee")
     public void save(@RequestBody EmployeeReqDTO employeeReqDTO){
         System.out.println(employeeReqDTO);
-        System.out.println(employeeReqDTO.getUsername());
-        System.out.println(employeeReqDTO.getPassword());
-        System.out.println(employeeReqDTO.getEmail());
+//        System.out.println(employeeReqDTO.getUsername());
+//        System.out.println(employeeReqDTO.getPassword());
+//        System.out.println(employeeReqDTO.getEmail());
     }
 }
