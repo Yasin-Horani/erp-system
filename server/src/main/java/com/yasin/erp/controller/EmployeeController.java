@@ -2,6 +2,7 @@ package com.yasin.erp.controller;
 
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.entity.Employee;
+import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,9 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeRepo employeeRepo;
+
+    @Autowired
+    private EmployeeMapper employeeMapper;
 
     @GetMapping(path = "/employee")
     public String getEmployee(){
@@ -31,7 +35,7 @@ public class EmployeeController {
     // save new employee
     @PostMapping(path = "/save-employee")
     public void save(@RequestBody EmployeeReqDTO req){
-        Employee employee = Employee.toEntity(req);
+        Employee employee = this.employeeMapper.toEnity(req);
         this.employeeRepo.save(employee);
     }
 }

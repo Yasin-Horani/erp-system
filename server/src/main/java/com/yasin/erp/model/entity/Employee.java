@@ -23,15 +23,10 @@ public class Employee {
 
     @Column(name = "employee_password")
     private String employeePassword;
+
     @Column(name = "employee_email")
     private String employeeEmail;
 
 
-    public static Employee toEntity(EmployeeReqDTO dto) {
-        Employee employee = new Employee();
-        employee.setEmployeeName(dto.getUsername());
-        employee.setEmployeeEmail(dto.getEmail());
-        employee.setEmployeePassword(dto.getPassword());
-        return employee;
-    }
+
 }
