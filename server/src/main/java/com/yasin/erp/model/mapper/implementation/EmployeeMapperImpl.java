@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 public class EmployeeMapperImpl implements EmployeeMapper {
     @Override
     public Employee toEnity(EmployeeReqDTO dto) {
-        Employee employee = new Employee();
-        employee.setEmployeeName(dto.getUsername());
-        employee.setEmployeeEmail(dto.getEmail());
-        employee.setEmployeePassword(dto.getPassword());
-        return employee;
+        return Employee.builder()
+                .employeeName(dto.getUsername())
+                .employeePassword(dto.getPassword())
+                .employeeEmail(dto.getEmail())
+                .build();
     }
 }
