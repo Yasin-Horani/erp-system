@@ -3,6 +3,7 @@ package com.yasin.erp.model.entity;
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "employees")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employee {
