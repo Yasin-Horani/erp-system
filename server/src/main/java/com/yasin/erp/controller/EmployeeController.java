@@ -8,6 +8,8 @@ import com.yasin.erp.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/employees")
 public class EmployeeController {
@@ -18,9 +20,10 @@ public class EmployeeController {
     @Autowired
     private EmployeeMapper employeeMapper;
 
+    // get all
     @GetMapping(path = "/employee")
-    public String getEmployee() {
-        return "<h1 style='color: red;'>Yasin</h1>";
+    public List<Employee> getEmployee() {
+        return employeeRepo.findAll();
     }
 
     @GetMapping(path = "/employee-by-id")
