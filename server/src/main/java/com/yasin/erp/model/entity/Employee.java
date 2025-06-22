@@ -1,5 +1,6 @@
 package com.yasin.erp.model.entity;
 
+import com.yasin.erp.model.dto.EmployeeReqDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeEntity {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
@@ -22,6 +23,15 @@ public class EmployeeEntity {
 
     @Column(name = "employee_password")
     private String employeePassword;
-            @Column(name = "employee_email")
+    @Column(name = "employee_email")
     private String employeeEmail;
+
+
+    public static Employee toEntity(EmployeeReqDTO dto) {
+        Employee employee = new Employee();
+        employee.setEmployeeName(dto.getUsername());
+        employee.setEmployeeEmail(dto.getEmail());
+        employee.setEmployeePassword(dto.getPassword());
+        return employee;
+    }
 }
