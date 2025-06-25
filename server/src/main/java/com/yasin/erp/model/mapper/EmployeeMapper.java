@@ -1,13 +1,15 @@
 package com.yasin.erp.model.mapper;
 
 import com.yasin.erp.model.dto.EmployeeReqDTO;
-import com.yasin.erp.model.dto.EmployeeResponseDto;
 import com.yasin.erp.model.entity.Employee;
-import org.springframework.stereotype.Service;
+import org.mapstruct.Mapper;
 
-@Service
+@Mapper(componentModel = "spring")
 public interface EmployeeMapper {
-    Employee toEnity(EmployeeReqDTO dto);
+    // from dto to entity
+    Employee toEntity(EmployeeReqDTO dto);
 
-    EmployeeResponseDto toRespDto(Employee entity);
+    // from entity to response
+    EmployeeReqDTO toRespDto(Employee entity);
+
 }
