@@ -1,6 +1,7 @@
 package com.yasin.erp.controller;
 
 import com.yasin.erp.model.dto.EmployeeReqDTO;
+import com.yasin.erp.model.dto.EmployeeResponseDto;
 import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.repository.EmployeeRepo;
@@ -37,7 +38,7 @@ public class EmployeeController {
 
     // save new employee
     @PostMapping(path = "/save-employee")
-    public EmployeeReqDTO save(@RequestBody EmployeeReqDTO req) {
+    public EmployeeResponseDto save(@RequestBody EmployeeReqDTO req) {
         Employee employee = this.employeeMapper.toEntity(req);
         Employee saveEmployee = this.employeeRepo.save(employee);
         return this.employeeMapper.toRespDto(saveEmployee);
