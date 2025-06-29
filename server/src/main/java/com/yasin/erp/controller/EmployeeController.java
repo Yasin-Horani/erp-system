@@ -20,17 +20,19 @@ public class EmployeeController {
     @Autowired
     private EmployeeMapper employeeMapper;
 
-    // get all
+    // get all employees
     @GetMapping(path = "/employee")
     public List<Employee> getEmployee() {
         return employeeRepo.findAll();
     }
 
+    // PASS
     @GetMapping(path = "/employee-by-id")
     public String getEmployeeById(@RequestParam(name = "id") int id) {
         return "<h1 style='color: green;'>Yasin</h1>" + id;
     }
 
+    // PASS
     @GetMapping(path = "/employee/{username}/username")
     public String getEmployeeUsername(@PathVariable(name = "username") String username) {
         return "<h1 style='color: blue;'>" + username + "</h1>";
