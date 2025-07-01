@@ -5,6 +5,7 @@ import com.yasin.erp.model.dto.EmployeeResponseDto;
 import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.repository.EmployeeRepo;
+import com.yasin.erp.service.impl.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,18 +14,13 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/employees")
 public class EmployeeController {
-
     @Autowired
-    private EmployeeRepo employeeRepo;
-
-    @Autowired
-    private EmployeeMapper employeeMapper;
-
+    private EmployeeService employeeService;
     // get all employees
-    @GetMapping(path = "/employee")
-    public List<Employee> getEmployee() {
-        return employeeRepo.findAll();
-    }
+//    @GetMapping(path = "/employee")
+//    public List<Employee> getEmployee() {
+//        return employeeRepo.findAll();
+//    }
 
     // PASS
     @GetMapping(path = "/employee-by-id")
@@ -41,8 +37,6 @@ public class EmployeeController {
     // save new employee
     @PostMapping(path = "/save-employee")
     public EmployeeResponseDto save(@RequestBody EmployeeReqDTO req) {
-        Employee employee = this.employeeMapper.toEntity(req);
-        Employee saveEmployee = this.employeeRepo.save(employee);
-        return this.employeeMapper.toRespDto(saveEmployee);
+        return this.employeeService.addNewEmpolyee(req);
     }
 }
