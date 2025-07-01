@@ -1,7 +1,7 @@
 package com.yasin.erp.model.mapper;
 
 import com.yasin.erp.model.dto.EmployeeReqDTO;
-import com.yasin.erp.model.dto.EmployeeResponseDto;
+import com.yasin.erp.model.dto.EmployeeResDto;
 import com.yasin.erp.model.entity.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -15,5 +15,5 @@ public interface EmployeeMapper {
 
     @Mapping(source = "employeeName", target = "username")
     @Mapping(source = "employeeEmail", target = "email")
-    EmployeeResponseDto toRespDto(Employee entity);
+    EmployeeResDto toRespDto(Employee entity);
 }
