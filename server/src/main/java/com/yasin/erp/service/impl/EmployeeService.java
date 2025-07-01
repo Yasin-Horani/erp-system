@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
     @Autowired
@@ -21,5 +23,9 @@ public class EmployeeService {
         Employee employee = this.employeeMapper.toEntity(req);
         Employee saveEmployee = this.employeeRepo.save(employee);
         return this.employeeMapper.toRespDto(saveEmployee);
+    }
+
+    public List<Employee> getAllEmplyee(){
+        return this.employeeRepo.findAll();
     }
 }

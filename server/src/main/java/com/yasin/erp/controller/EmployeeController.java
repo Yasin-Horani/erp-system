@@ -16,11 +16,12 @@ import java.util.List;
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
+
     // get all employees
-//    @GetMapping(path = "/employee")
-//    public List<Employee> getEmployee() {
-//        return employeeRepo.findAll();
-//    }
+    @GetMapping(path = "/employee")
+    public List<Employee> getEmployee() {
+        return this.employeeService.getAllEmplyee();
+    }
 
     // PASS
     @GetMapping(path = "/employee-by-id")
