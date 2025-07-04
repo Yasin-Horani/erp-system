@@ -2,7 +2,9 @@ package com.yasin.erp.controller;
 
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.dto.EmployeeResDto;
+import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
 import com.yasin.erp.model.entity.Employee;
+import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.service.EmployeeService;
 import com.yasin.erp.utilities.PasswordGeneratorUtility;
 import lombok.RequiredArgsConstructor;
@@ -24,9 +26,15 @@ public class EmployeeController {
     }
 
     // save new employee
-    @PostMapping(path = "/save-employee")
+    @PostMapping(value = "/save-employee")
     public EmployeeResDto save(@RequestBody EmployeeReqDTO req) {
-        return this.employeeService.addNewEmpolyee(req);
+        return this.employeeService.saveEmployee(req);
+    }
+
+    // update Employee
+    @PostMapping(value = "/update-employee")
+    public EmployeeResDto update(@RequestBody UpdateEmployeeReqDTO req) {
+        return this.employeeService.updateEmployee(req);
     }
 
     // get random password
