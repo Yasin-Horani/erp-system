@@ -2,6 +2,7 @@ package com.yasin.erp.service.impl;
 
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.dto.EmployeeResDto;
+import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
 import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.repository.EmployeeRepo;
@@ -21,7 +22,7 @@ public class EmployeeServiceImp implements EmployeeService {
 
 
     @Override
-    public EmployeeResDto addNewEmpolyee(EmployeeReqDTO req) {
+    public EmployeeResDto saveEmployee(EmployeeReqDTO req) {
         Employee employee = this.employeeMapper.toEntity(req);
         Employee saveEmployee = this.employeeRepo.save(employee);
         return this.employeeMapper.toRespDto(saveEmployee);
@@ -31,4 +32,13 @@ public class EmployeeServiceImp implements EmployeeService {
     public List<Employee> getAllEmplyee() {
         return this.employeeRepo.findAll();
     }
+
+    @Override
+    public EmployeeResDto updateEmployee(UpdateEmployeeReqDTO dto) {
+        Employee entity = this.employeeMapper.toEntity(dto);
+        Employee savedEntity = this.employeeRepo.save(entity);
+        return this.employeeMapper.toRespDto(savedEntity);
+    }
+
+
 }
