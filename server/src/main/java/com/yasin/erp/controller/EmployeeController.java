@@ -4,16 +4,18 @@ import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.dto.EmployeeResDto;
 import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.service.EmployeeService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(path = "/employees")
 public class EmployeeController {
-    @Autowired
-    private EmployeeService employeeService;
+
+    private final EmployeeService employeeService;
 
     // get all employees
     @GetMapping(path = "/employee")
