@@ -1,15 +1,15 @@
 package com.yasin.erp.model.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeResDto {
+public class UpdateEmployeeReqDTO {
+    private Long employeeId;
     private String employeeName;
+    private String employeePassword;
     private String employeeEmail;
 }

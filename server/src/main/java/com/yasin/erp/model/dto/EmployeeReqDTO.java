@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmployeeReqDTO {
-    private String username;
-    private String password;
-    private String email;
+    private String employeeName;
+    private String employeePassword;
+    private String employeeEmail;
 }
