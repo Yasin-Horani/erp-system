@@ -6,18 +6,23 @@ import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.repository.EmployeeRepo;
 import com.yasin.erp.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EmployeeServiceImp implements EmployeeService {
-    @Autowired
-    private EmployeeRepo employeeRepo;
+    //  @Autowired
+    private final EmployeeRepo employeeRepo;
 
-    @Autowired
-    private EmployeeMapper employeeMapper;
+    // @Autowired
+    private final EmployeeMapper employeeMapper;
+
+    // dependency injection
+    public EmployeeServiceImp(EmployeeMapper employeeMapper, EmployeeRepo employeeRepo) {
+        this.employeeMapper = employeeMapper;
+        this.employeeRepo = employeeRepo;
+    }
 
     @Override
     public EmployeeResDto addNewEmpolyee(EmployeeReqDTO req) {
