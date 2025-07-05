@@ -26,19 +26,19 @@ public class EmployeeController {
     }
 
     // save new employee
-    @PostMapping(value = "/save-employee")
+    @PostMapping(value = "/employee")
     public EmployeeResDto save(@RequestBody EmployeeReqDTO req) {
         return this.employeeService.saveEmployee(req);
     }
 
     // update Employee
-    @PostMapping(value = "/update-employee")
+    @PutMapping(value = "/employee")
     public EmployeeResDto update(@RequestBody UpdateEmployeeReqDTO req) {
         return this.employeeService.updateEmployee(req);
     }
 
     // delete employee by id
-    @DeleteMapping(value = "/delete-employee/impl-id/{id}")
+    @DeleteMapping(value = "/employee/{id}")
     public void deleteEmployee(@PathVariable Long id) {
         this.employeeService.deleteEmployee(id);
     }
