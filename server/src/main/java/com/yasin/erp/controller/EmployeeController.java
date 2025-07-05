@@ -37,6 +37,12 @@ public class EmployeeController {
         return this.employeeService.updateEmployee(req);
     }
 
+    // delete employee by id
+    @DeleteMapping(value = "/delete-employee/impl-id/{id}")
+    public void deleteEmployee(@PathVariable Long id) {
+        this.employeeService.deleteEmployee(id);
+    }
+
     // get random password
     @GetMapping("/pass")
     public String generatePassword() {
