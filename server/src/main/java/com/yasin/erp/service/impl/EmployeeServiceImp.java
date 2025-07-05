@@ -1,5 +1,6 @@
 package com.yasin.erp.service.impl;
 
+import com.yasin.erp.model.dto.DeleteEmployeeReqDto;
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.dto.EmployeeResDto;
 import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
@@ -7,6 +8,7 @@ import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.repository.EmployeeRepo;
 import com.yasin.erp.service.EmployeeService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,16 @@ public class EmployeeServiceImp implements EmployeeService {
         Employee savedEntity = this.employeeRepo.save(entity);
         return this.employeeMapper.toRespDto(savedEntity);
     }
+
+    @Override
+    public void deleteEmployee(Long id) {
+        if (!employeeRepo.existsById(id)) {
+            throw new EntityNotFoundException("Employee not found with ID " + id);
+        }
+        employeeRepo.deleteById(id);
+    }
+
+
 
 
 }

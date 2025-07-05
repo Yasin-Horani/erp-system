@@ -1,5 +1,6 @@
 package com.yasin.erp.service;
 
+import com.yasin.erp.model.dto.DeleteEmployeeReqDto;
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.dto.EmployeeResDto;
 import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
@@ -16,4 +17,7 @@ public interface EmployeeService {
 
     //update employee
     EmployeeResDto updateEmployee(UpdateEmployeeReqDTO Id);
+
+    //delete employee
+    void deleteEmployee(Long Id);
 }
