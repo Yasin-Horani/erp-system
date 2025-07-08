@@ -28,7 +28,4 @@ public class Employee {
 
     @Column(name = "employee_email")
     private String employeeEmail;
-
-
-
 }

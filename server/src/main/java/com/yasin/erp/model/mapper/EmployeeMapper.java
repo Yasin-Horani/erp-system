@@ -17,5 +17,4 @@ public interface EmployeeMapper {
     Employee toEntity(DeleteEmployeeReqDto dto);
 
     EmployeeResDto toRespDto(Employee entity);
-
 }
