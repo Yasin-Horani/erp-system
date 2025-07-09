@@ -30,6 +30,7 @@ public class EmployeeController {
     public EmployeeDTO getEmployee(@PathVariable Long id) {
         return this.employeeService.getEmployeeById(id);
     }
+
     // save new employee
     @PostMapping(value = "/employee")
     public EmployeeResDTO save(@RequestBody EmployeeReqDTO req) {
