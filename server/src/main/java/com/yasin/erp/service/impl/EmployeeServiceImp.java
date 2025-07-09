@@ -52,7 +52,7 @@ public class EmployeeServiceImp implements EmployeeService {
 
     @Override
     public EmployeeDTO getEmployeeById(Long Id) {
-       Optional<Employee> employeeById = this.employeeRepo.findById(Id);
+       Optional<Employee> employeeById = this.employeeRepo.findByEmployeeIdAndDeletedAtNull(Id);
         return this.employeeMapper.toDTO(employeeById.get());
     }
 }
