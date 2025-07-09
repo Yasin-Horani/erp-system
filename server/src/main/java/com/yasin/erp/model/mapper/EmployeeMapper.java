@@ -1,9 +1,6 @@
 package com.yasin.erp.model.mapper;
 
-import com.yasin.erp.model.dto.DeleteEmployeeReqDto;
-import com.yasin.erp.model.dto.EmployeeReqDTO;
-import com.yasin.erp.model.dto.EmployeeResDto;
-import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
+import com.yasin.erp.model.dto.*;
 import com.yasin.erp.model.entity.Employee;
 import org.mapstruct.Mapper;
 
@@ -17,4 +14,8 @@ public interface EmployeeMapper {
     Employee toEntity(DeleteEmployeeReqDto dto);
 
     EmployeeResDto toRespDto(Employee entity);
+
+    EmployeeDTO toDTO(Employee entity);
+
+    Employee toEntity(EmployeeDTO dto);
 }
