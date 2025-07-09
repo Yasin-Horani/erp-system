@@ -1,9 +1,6 @@
 package com.yasin.erp.service;
 
-import com.yasin.erp.model.dto.DeleteEmployeeReqDto;
-import com.yasin.erp.model.dto.EmployeeReqDTO;
-import com.yasin.erp.model.dto.EmployeeResDto;
-import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
+import com.yasin.erp.model.dto.*;
 import com.yasin.erp.model.entity.Employee;
 
 import java.util.List;
@@ -20,4 +17,7 @@ public interface EmployeeService {
 
     //delete employee
     void deleteEmployee(Long Id);
+
+    // get employee by id
+    EmployeeDTO getEmployeeById(Long Id);
 }
