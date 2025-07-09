@@ -1,6 +1,5 @@
 package com.yasin.erp.service.impl;
 
-import com.yasin.erp.model.dto.DeleteEmployeeReqDto;
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.dto.EmployeeResDto;
 import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
