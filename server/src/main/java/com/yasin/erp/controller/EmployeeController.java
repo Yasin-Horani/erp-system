@@ -1,10 +1,10 @@
 package com.yasin.erp.controller;
 
+import com.yasin.erp.model.dto.EmployeeDTO;
 import com.yasin.erp.model.dto.EmployeeReqDTO;
 import com.yasin.erp.model.dto.EmployeeResDto;
 import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
 import com.yasin.erp.model.entity.Employee;
-import com.yasin.erp.model.mapper.EmployeeMapper;
 import com.yasin.erp.service.EmployeeService;
 import com.yasin.erp.utilities.PasswordGeneratorUtility;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +25,11 @@ public class EmployeeController {
         return this.employeeService.getAllEmplyee();
     }
 
+    // get employee by id
+    @GetMapping(value = "/employee/{id}")
+    public EmployeeDTO getEmployee(@PathVariable Long id) {
+        return this.employeeService.getEmployeeById(id);
+    }
     // save new employee
     @PostMapping(value = "/employee")
     public EmployeeResDto save(@RequestBody EmployeeReqDTO req) {
