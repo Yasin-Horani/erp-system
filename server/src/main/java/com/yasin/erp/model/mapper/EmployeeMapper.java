@@ -13,7 +13,7 @@ public interface EmployeeMapper {
 
     Employee toEntity(DeleteEmployeeReqDTO dto);
 
-    EmployeeResDto toRespDto(Employee entity);
+    EmployeeResDTO toRespDto(Employee entity);
 
     EmployeeDTO toDTO(Employee entity);
 

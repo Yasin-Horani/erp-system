@@ -2,7 +2,7 @@ package com.yasin.erp.controller;
 
 import com.yasin.erp.model.dto.EmployeeDTO;
 import com.yasin.erp.model.dto.EmployeeReqDTO;
-import com.yasin.erp.model.dto.EmployeeResDto;
+import com.yasin.erp.model.dto.EmployeeResDTO;
 import com.yasin.erp.model.dto.UpdateEmployeeReqDTO;
 import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.service.EmployeeService;
@@ -32,13 +32,13 @@ public class EmployeeController {
     }
     // save new employee
     @PostMapping(value = "/employee")
-    public EmployeeResDto save(@RequestBody EmployeeReqDTO req) {
+    public EmployeeResDTO save(@RequestBody EmployeeReqDTO req) {
         return this.employeeService.saveEmployee(req);
     }
 
     // update Employee
     @PutMapping(value = "/employee")
-    public EmployeeResDto update(@RequestBody UpdateEmployeeReqDTO req) {
+    public EmployeeResDTO update(@RequestBody UpdateEmployeeReqDTO req) {
         return this.employeeService.updateEmployee(req);
     }
 
