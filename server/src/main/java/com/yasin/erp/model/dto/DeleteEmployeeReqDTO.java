@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeleteEmployeeReqDto {
+public class DeleteEmployeeReqDTO {
     private Long employeeId;
     private String employeeName;
     private String employeePassword;
