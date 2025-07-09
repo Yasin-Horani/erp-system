@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Where(clause = "deleted_at is null")
+@Where(clause = "deleted_at is null") // soft delete with out removing the data
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
