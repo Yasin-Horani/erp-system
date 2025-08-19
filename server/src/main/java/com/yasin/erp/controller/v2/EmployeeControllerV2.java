@@ -5,6 +5,7 @@ package com.yasin.erp.controller.v2;
 import com.yasin.erp.model.dto.EmployeeResDTO;
 import com.yasin.erp.model.dto.v2.EmployeeReqV2DTO;
 import com.yasin.erp.service.v2.EmployeeServiceV2;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class EmployeeControllerV2 {
 
     // save new employee
     @PostMapping(value = "/employee")
-    public EmployeeResDTO save(@RequestBody EmployeeReqV2DTO req) {
+    public EmployeeResDTO save(@RequestBody @Valid EmployeeReqV2DTO req) {
         return this.employeeServiceV2.saveEmployee(req);
     }
 }
