@@ -32,7 +32,7 @@ public class EmployeeReqV2DTO {
     @NotNull(message = "Email is required gmail or hotmail or Outlook")
     @Pattern(
             regexp = "^[A-Za-z0-9._%+-]+@(gmail\\.com|hotmail\\.com|outlook\\.com)$",
-            message = "Only Gmail or Hotmail addresses are allowed"
+            message = "Only Gmail or Hotmail or Outlook addresses are allowed"
     )
     private String employeeEmail;
 }
