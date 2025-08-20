@@ -13,6 +13,10 @@ public class EmployeeReqV2DTO {
 
     @NotNull(message = "You have to add employer name")
     @Size(min = 3, max = 25, message = "Employee name must be between 3 and 25 characters")
+    @Pattern(
+            regexp = "^[A-Za-z]+$",
+            message = "Employee name must contain only letters (A–Z or a–z)"
+    )
     private String employeeName;
 
     @NotNull(message = "You must provide a password")
