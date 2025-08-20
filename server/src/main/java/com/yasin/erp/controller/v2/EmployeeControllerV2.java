@@ -1,17 +1,11 @@
 package com.yasin.erp.controller.v2;
 
-
-
 import com.yasin.erp.model.dto.EmployeeResDTO;
 import com.yasin.erp.model.dto.v2.EmployeeReqV2DTO;
 import com.yasin.erp.service.v2.EmployeeServiceV2;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-
-
-
 
 @RestController
 @RequiredArgsConstructor
