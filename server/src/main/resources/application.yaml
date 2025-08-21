@@ -4,14 +4,5 @@ server:
   servlet:
     context-path: /dev
 spring:
-  application:
-    name: erp
-  datasource:
-    url: jdbc:mysql://localhost:4306/erp_db
-    username: root
-    password:
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  profiles:
+    active: dev
