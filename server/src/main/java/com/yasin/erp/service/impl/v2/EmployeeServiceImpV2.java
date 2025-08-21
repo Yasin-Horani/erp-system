@@ -10,6 +10,8 @@ import com.yasin.erp.service.v2.EmployeeServiceV2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EmployeeServiceImpV2 implements EmployeeServiceV2 {
@@ -26,4 +28,8 @@ public class EmployeeServiceImpV2 implements EmployeeServiceV2 {
         return this.employeeMapper.toRespDto(saveEmployee);
     }
 
+    @Override
+    public List<Employee> getAllEmplyee() {
+        return this.employeeRepo.findAll();
+    }
 }
