@@ -8,12 +8,14 @@ import com.yasin.erp.model.entity.Employee;
 import com.yasin.erp.service.EmployeeService;
 import com.yasin.erp.utilities.PasswordGeneratorUtility;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Profile(value = {"dev", "local", "sit", "uat"}) // to run it only on dev or local or sit or uat environments
 @RequestMapping(path = "/employees/v1.0.0")
 public class EmployeeController {
 
