@@ -75,6 +75,7 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
         <!-- http://localhost:8081/dev/swagger-ui/index.html-->
+        <!-- http://localhost:8081/dev/v3/api-docs-->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
